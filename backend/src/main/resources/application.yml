@@ -33,3 +33,9 @@ springdoc:
     path: /api-docs
   swagger-ui:
     path: /swagger-ui.html
+
+stratlab:
+  historical-import:
+    enabled: false
+    access-key: ${STRATLAB_HISTORICAL_IMPORT_KEY:}
+    max-payload-bytes: 10485760

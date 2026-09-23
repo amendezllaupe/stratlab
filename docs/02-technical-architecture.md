@@ -96,6 +96,7 @@ backend/src/main/java/com/stratlab/
   match/
   stats/
   analytics/
+  historicalimport/
 ```
 
 Each domain package may contain:
@@ -215,6 +216,14 @@ Basic fields:
 - firstKills
 - firstDeaths
 
+### HistoricalImport
+
+Represents one immutable, explicitly submitted external payload. It records provider, source type, source reference, checksum and raw JSON body without headers, cookies or credentials.
+
+### PlayerSeasonStatistics
+
+Represents normalized season-level metrics imported from a historical source. It is linked to both the player and exactly one historical import, preserving auditability and idempotency.
+
 ---
 
 ## 5. Database
@@ -241,6 +250,7 @@ backend/src/main/resources/db/migration/V1__init_schema.sql
 - Add indexes when queries require them.
 - Avoid storing calculated values unless necessary.
 - Use migrations for every schema change.
+- Preserve external payload provenance separately from normalized statistics.
 
 ---
 

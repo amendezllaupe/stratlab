@@ -14,6 +14,7 @@ StratLab aims to provide a structured way to:
 
 - Register teams and players.
 - Track Valorant matches and player statistics.
+- Import audited historical season snapshots exported by the team.
 - Analyze team performance by map, agent, role and match history.
 - Identify strengths, weaknesses and improvement opportunities.
 - Provide tactical recommendations based on match data.
@@ -110,6 +111,10 @@ AI features are intentionally excluded from the initial MVP and will be added in
 - Dashboard analytics
 - Recommendations
 - AI-assisted analysis, later phase
+
+## Historical Data Boundary
+
+Historical Tracker exports remain in the separate `valorant-analisis` handbook. StratLab imports supported snapshots through a documented API and stores normalized records plus provenance; it does not scrape Tracker.gg. See [`docs/05-historical-data-import.md`](docs/05-historical-data-import.md).
 
 ---
 
